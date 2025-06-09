@@ -146,3 +146,35 @@ Bloquear definitivamente `/etc/hosts`
 127.0.0.1 chaturbate.com
 127.0.0.1 pornhub.com
 ```
+
+
+## Crontab fedora
+
+Debes instalar el paquete que contiene `crontab`, que es **`cronie`** en Fedora. Para hacerlo, ejecuta:
+
+```bash
+sudo dnf install cronie
+```
+
+Luego habilita y arranca el servicio de `crond`:
+
+```bash
+sudo systemctl enable crond
+sudo systemctl start crond
+```
+
+Y finalmente, puedes usar:
+
+```bash
+sudo crontab -e
+```
+
+### ✅ Verifica:
+
+Puedes verificar que el servicio esté funcionando con:
+
+```bash
+systemctl status crond
+```
+
+
