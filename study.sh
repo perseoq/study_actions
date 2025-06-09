@@ -32,7 +32,6 @@ DOMINIOS=(
 bloquear() {
   echo "🔒 Bloqueando sitios..."
   for dominio in "${DOMINIOS[@]}"; do
-    # Solo agrega si no está ya presente
     if ! grep -q "$dominio" "$HOSTS_FILE"; then
       echo "$REDIRECT_IP $dominio # BLOQUEO_CUSTOM" >> "$HOSTS_FILE"
     fi
@@ -42,9 +41,22 @@ bloquear() {
 
 desbloquear() {
   echo "🔓 Desbloqueando sitios..."
-  # Elimina todas las líneas que contienen el marcador BLOQUEO_CUSTOM
   sed -i '/# BLOQUEO_CUSTOM$/d' "$HOSTS_FILE"
   echo "✅ Sitios desbloqueados de /etc/hosts"
+}
+
+ayuda() {
+  echo "Uso: sudo $0 [opción]"
+  echo ""
+  echo "Opciones:"
+  echo "  --bloquear       Bloquea sitios agregando entradas al archivo /etc/hosts"
+  echo "  --desbloquear    Elimina las entradas agregadas y desbloquea los sitios"
+  echo "  --help           Muestra esta ayuda"
+  echo ""
+  echo "Ejemplo:"
+  echo "  sudo $0 --bloquear"
+  echo "  sudo $0 --desbloquear"
+  exit 0
 }
 
 # Comprobación de privilegios
@@ -61,8 +73,11 @@ case "$1" in
   --desbloquear)
     desbloquear
     ;;
+  --help|-h)
+    ayuda
+    ;;
   *)
-    echo "Uso: $0 --bloquear | --desbloquear"
+    echo "❌ Opción no válida. Usa --help para ver las opciones disponibles."
     exit 1
     ;;
 esac
