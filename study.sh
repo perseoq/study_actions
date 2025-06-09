@@ -27,6 +27,7 @@ DOMINIOS=(
   "primevideo.com"
   "play.mercadolibre.com.mx"
   "netflix.com"
+  "www3.animeflv.net"
 )
 
 bloquear() {
