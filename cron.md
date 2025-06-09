@@ -59,6 +59,28 @@ iptables -A OUTPUT -d 151.101.193.140 -j REJECT
 iptables -A OUTPUT -d 151.101.1.140 -j REJECT
 iptables -A OUTPUT -d 151.101.129.140 -j REJECT
 iptables -A OUTPUT -d 151.101.65.140 -j REJECT
+
+
+# open.spotify.com
+iptables -A OUTPUT -d  146.75.107.42 -j REJECT
+# primevideo.com
+iptables -A OUTPUT -d  3.167.192.93 -j REJECT
+iptables -A OUTPUT -d  3.167.192.129 -j REJECT
+iptables -A OUTPUT -d  3.167.192.34 -j REJECT
+iptables -A OUTPUT -d  3.167.192.59 -j REJECT
+# play.mercadolibre.com.mx
+iptables -A OUTPUT -d  13.226.210.77 -j REJECT
+iptables -A OUTPUT -d  13.226.210.72 -j REJECT
+iptables -A OUTPUT -d  13.226.210.115 -j REJECT
+iptables -A OUTPUT -d  13.226.210.71 -j REJECT
+
+# netflix.com
+iptables -A OUTPUT -d  3.211.157.115 -j REJECT
+iptables -A OUTPUT -d  54.160.93.182 -j REJECT
+iptables -A OUTPUT -d  3.225.92.8 -j REJECT
+
+
+
 ```
 
 Borrar
@@ -101,4 +123,22 @@ iptables -D OUTPUT -d 151.101.193.140 -j REJECT
 iptables -D OUTPUT -d 151.101.1.140 -j REJECT
 iptables -D OUTPUT -d 151.101.129.140 -j REJECT
 iptables -D OUTPUT -d 151.101.65.140 -j REJECT
+# open.spotify.com
+iptables -D OUTPUT -d  146.75.107.42 -j REJECT
+# primevideo.com
+iptables -D OUTPUT -d  3.167.192.93 -j REJECT
+iptables -D OUTPUT -d  3.167.192.129 -j REJECT
+iptables -D OUTPUT -d  3.167.192.34 -j REJECT
+iptables -D OUTPUT -d  3.167.192.59 -j REJECT
+# play.mercadolibre.com.mx
+iptables -D OUTPUT -d  13.226.210.77 -j REJECT
+iptables -D OUTPUT -d  13.226.210.72 -j REJECT
+iptables -D OUTPUT -d  13.226.210.115 -j REJECT
+iptables -D OUTPUT -d  13.226.210.71 -j REJECT
+
+# netflix.com
+iptables -D OUTPUT -d  3.211.157.115 -j REJECT
+iptables -D OUTPUT -d  54.160.93.182 -j REJECT
+iptables -D OUTPUT -d  3.225.92.8 -j REJECT
 ```
+
