@@ -28,6 +28,13 @@ DOMINIOS=(
   "play.mercadolibre.com.mx"
   "netflix.com"
   "www3.animeflv.net"
+  "xvideos.com"
+  "xvideos.es"
+  "pronhub.com"
+  "xnxx.com"
+  "stripchat.com"
+  "cams.com"
+  "chaturbate.com"
 )
 
 bloquear() {
@@ -68,10 +75,10 @@ fi
 
 # Comando principal
 case "$1" in
-  --bloquear)
+  --bloquear|-b)
     bloquear
     ;;
-  --desbloquear)
+  --desbloquear|-d)
     desbloquear
     ;;
   --help|-h)
